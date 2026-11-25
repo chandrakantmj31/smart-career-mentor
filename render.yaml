@@ -1,0 +1,31 @@
+# Render Blueprint: one web service serves the Flask API AND the frontend pages from the same URL.
+services:
+  - type: web
+    name: smart-career-mentor
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    # 1 worker + threads keeps the in-memory rate limiter accurate.
+    startCommand: cd backend && gunicorn run:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 60
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_NAME
+        value: smart_career_mentor
+      - key: MONGODB_URI          # paste your Atlas connection string in the Render dashboard
+        sync: false
+      - key: FRONTEND_URL         # set to your Render URL, e.g. https://smart-career-mentor.onrender.com
+        sync: false
+      - key: GOOGLE_CLIENT_ID     # optional
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET # optional
+        sync: false
+      - key: GOOGLE_REDIRECT_URI  # optional: https://<your-url>/api/auth/google/callback
+        sync: false

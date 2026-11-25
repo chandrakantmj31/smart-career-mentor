@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f7f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#ffffff", "status-success": "#36866C", "primary-fixed-dim": "#a1ccec", "surface": "#f7f9ff", "inverse-primary": "#a1ccec", "on-error-container": "#93000a", "primary": "#15445f", "inverse-surface": "#27313c", "on-surface": "#121c26", "background": "#f7f9ff", "error": "#ba1a1a", "secondary-fixed-dim": "#aacec1", "on-tertiary": "#ffffff", "on-primary-fixed": "#001e2f", "status-warning": "#D59A45", "on-surface-variant": "#41474d", "on-primary-container": "#a9d3f4", "surface-bright": "#f7f9ff", "text-muted": "#77818D", "tertiary-container": "#765020", "secondary-fixed": "#c5ebdd", "secondary": "#43655a", "on-tertiary-container": "#f9c58a", "on-background": "#121c26", "surface-bg": "#F7F8FA", "tertiary-fixed-dim": "#f1bd83", "surface-variant": "#d9e3f1", "outline": "#72787e", "tertiary-fixed": "#ffddb9", "on-primary-fixed-variant": "#1d4b66", "surface-container-high": "#dfe9f7", "surface-container-highest": "#d9e3f1", "on-tertiary-fixed": "#2b1700", "on-secondary-fixed": "#002019", "outline-variant": "#c1c7ce", "on-secondary": "#ffffff", "on-primary": "#ffffff", "primary-container": "#315c78", "surface-dim": "#d1dbe9", "secondary-container": "#c5ebdd", "on-secondary-container": "#496b60", "surface-sidebar": "#FFFFFF", "tertiary": "#5b390a", "surface-tint": "#38637f", "on-tertiary-fixed-variant": "#623f10", "surface-container": "#e4effd", "border-subtle": "#E7EBEF", "error-container": "#ffdad6", "inverse-on-surface": "#e8f2ff", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#2b4d43", "surface-container-low": "#edf4ff", "primary-fixed": "#c8e6ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "2rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem" }, fontFamily: { "headline-xl": ["Manrope"], "metric-inline": ["IBM Plex Sans"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Manrope"], "headline-sm": ["Manrope"], "metric-display": ["IBM Plex Sans"], "headline-md": ["Manrope"], "headline-lg-mobile": ["Manrope"], "label-sm": ["Inter"], "headline-xl-mobile": ["Manrope"], "body-sm": ["Inter"], "label-md": ["Inter"] }, fontSize: { "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "metric-inline": ["0.875rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["0.9375rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "metric-display": ["2rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "500" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Open menu drawer" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary transition-colors focus:outline-none" id="menu-drawer-toggle"><span class="material-symbols-outlined text-[22px]">menu</span></button><img alt="Smart Career Mentor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD8auDQmxcUlSzPHFhBUA9YDGfnzZcjCeRQW1O0yz7VpcJ0JQToxhAqwpMhV2sQkNh2T0F-N5DLM15GHbrwtydI2_MSKCfbjAwFfN1dGzKdMyG2ziBEwCi4-LF4cgNPi2CjLq6uy91SE9rhzrBiOrmkY5OE4FlzigrgUNAwTFlSoB3rE7UsFliNG8wfRe8RqOLPyKm1cEgCYaTb_eRKgtIYDDe89Fi3NLTQZyyuKvz3yg"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-label-md text-on-surface truncate leading-tight font-semibold tracking-tight">Smart Career Mentor</span><span class="font-label-sm text-label-sm text-text-muted truncate">Resume Analyzer</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-warning ring-2 ring-surface"></span></button><a aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full" data-path="profile-portfolio" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7lbDh6ZGRivCgpbfqlikoaIuG-k6e8f7zwK-UH6XN7GcDpvjVrdknInIGC5LSxphupvktpTAJPBw2hNj5MOTXDgBaDvNIt1xTcs5-sIjkJmihuNwNYPEgfNhilw2AS6kXcRAG_HzZ8gXI7zff2kRUXmi-Epesd6yW5x-o-RokRcmAu-xtSlEZUnqRY74k5PF-HZO-IntrmQNjo-Ex5lBFQC7kDpA78SCrb6074IQx"/></a></div></div></header><div class="fixed inset-0 z-50 bg-inverse-surface/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop"></div><aside class="fixed top-0 left-0 bottom-0 z-50 w-[280px] bg-surface-sidebar shadow-[0_16px_40px_-8px_rgba(23,33,43,0.12)] -translate-x-full transition-transform duration-300 ease-out flex flex-col pt-safe pb-safe" id="app-drawer"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Smart Career Mentor Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD8auDQmxcUlSzPHFhBUA9YDGfnzZcjCeRQW1O0yz7VpcJ0JQToxhAqwpMhV2sQkNh2T0F-N5DLM15GHbrwtydI2_MSKCfbjAwFfN1dGzKdMyG2ziBEwCi4-LF4cgNPi2CjLq6uy91SE9rhzrBiOrmkY5OE4FlzigrgUNAwTFlSoB3rE7UsFliNG8wfRe8RqOLPyKm1cEgCYaTb_eRKgtIYDDe89Fi3NLTQZyyuKvz3yg"/><span class="font-headline-sm text-label-md text-on-surface font-semibold">Menu</span></div><button aria-label="Close menu drawer" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary" id="menu-drawer-close"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="px-space-md py-space-sm flex items-center gap-space-md bg-surface-bg mx-space-md rounded-xl my-space-xs"><img alt="Profile" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7lbDh6ZGRivCgpbfqlikoaIuG-k6e8f7zwK-UH6XN7GcDpvjVrdknInIGC5LSxphupvktpTAJPBw2hNj5MOTXDgBaDvNIt1xTcs5-sIjkJmihuNwNYPEgfNhilw2AS6kXcRAG_HzZ8gXI7zff2kRUXmi-Epesd6yW5x-o-RokRcmAu-xtSlEZUnqRY74k5PF-HZO-IntrmQNjo-Ex5lBFQC7kDpA78SCrb6074IQx"/><div class="min-w-0 flex-1"><p class="font-label-md text-label-md text-on-surface font-semibold truncate">Candidate Profile</p><p class="font-label-sm text-label-sm text-status-success flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Active Search</p></div></div><nav class="flex-1 px-space-sm py-space-md flex flex-col gap-space-xs overflow-y-auto"><span class="px-space-sm font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Workspace</span><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant hover:bg-surface-bg hover:text-primary transition-colors" data-path="job-opportunities" href="#"><span class="material-symbols-outlined text-[22px]">work_outline</span><span class="font-label-md text-label-md">Job Opportunities</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant hover:bg-surface-bg hover:text-primary transition-colors" data-path="profile-portfolio" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-md text-label-md">Profile &amp; Portfolio</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant hover:bg-surface-bg hover:text-primary transition-colors" data-path="settings-preferences" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-md text-label-md">Settings &amp; Preferences</span></a><div class="my-space-sm h-px bg-border-subtle mx-space-sm"></div><span class="px-space-sm font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Quick Tools</span><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant hover:bg-surface-bg hover:text-primary transition-colors" data-path="resume-analyzer" href="#"><span class="material-symbols-outlined text-[22px]">difference</span><span class="font-label-md text-label-md">ATS Scan Diagnostics</span></a></nav></aside><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Dynamic Micro-Feedback Toast (Client-side interactive) -->
+<div class="fixed top-20 left-4 right-4 z-50 transform -translate-y-24 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl" id="action-toast">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">auto_awesome</span>
+<span class="font-body-sm text-body-sm flex-1 leading-snug" id="toast-text">Optimizing ATS semantic vector match...</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">done</span>
+</div>
+<!-- Editorial Sub-header / Intent Strip -->
+<div class="px-space-md pt-2 pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="flex h-2 w-2 rounded-full bg-status-success animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">ATS Parser Engine v4.2</span>
+</div>
+<span class="font-metric-inline text-metric-inline text-text-muted">Target: Senior Full-Stack</span>
+</div>
+<!-- Section: Resume Document Status & Re-upload Container -->
+<div class="px-space-md mt-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden group">
+<!-- Ambient subtle background tint -->
+<div class="absolute -right-12 -top-12 w-32 h-32 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<!-- File info panel -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-14 rounded-lg bg-surface-container flex flex-col items-center justify-center text-primary-container shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[26px]">picture_as_pdf</span>
+<span class="font-metric-inline text-[9px] uppercase tracking-wider text-text-muted font-bold -mt-0.5">PDF</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h2 class="font-headline-sm text-label-md text-on-surface font-semibold truncate max-w-[210px]">
+              Alex_Rivera_Resume_2024.pdf
+            </h2>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-[10px]">
+              Verified
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5 flex items-center gap-1.5">
+<span>142 KB</span>
+<span class="text-outline-variant">•</span>
+<span>Uploaded 2 hours ago</span>
+</p>
+</div>
+</div>
+<!-- Drag & drop dashed change-zone -->
+<div class="mt-space-md bg-surface-bg/70 rounded-lg p-space-sm flex items-center justify-between" style="background-image: radial-gradient(#d9e3f1 1px, transparent 1px); background-size: 8px 8px;">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[18px] text-text-muted">cloud_sync</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Need to update revisions?</span>
+</div>
+<button class="shrink-0 font-label-md text-label-sm text-primary hover:text-primary-container font-semibold transition-colors flex items-center gap-1 px-2 py-1 rounded bg-surface-container-lowest shadow-sm active:scale-95" id="reupload-btn" type="button">
+<span>Re-upload</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Action Stack -->
+<div class="mt-space-md flex flex-col gap-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-10 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" id="analyze-btn">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Analyze Resume</span>
+</button>
+<button class="h-10 bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-md text-label-md rounded-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" id="improve-btn">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+<span>Improve Resume</span>
+</button>
+</div>
+<button class="h-9 w-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-sm rounded-lg flex items-center justify-center gap-1.5 active:bg-surface-container-high transition-colors" id="download-report-btn">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>Download Evaluation Report (PDF)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section: Comprehensive ATS Score Breakdown Card -->
+<div class="px-space-md mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-start justify-between pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Overall ATS Index</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-metric-display text-headline-xl-mobile text-primary-container tracking-tight">79</span>
+<span class="font-metric-inline text-label-md text-text-muted font-normal">/100</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Competitive for Tech Roles</span>
+</span>
+<span class="font-body-sm text-[11px] text-text-muted mt-1 text-right">Top 18% of Engineering peers</span>
+</div>
+</div>
+<!-- Radial & Visual Breakdown Meters -->
+<div class="mt-space-md space-y-3">
+<!-- Metric 1: Skills Relevance -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>
+              Skills Relevance
+            </span>
+<span class="font-metric-inline text-metric-inline text-on-surface">82%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-status-success transition-all duration-700" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Metric 2: Experience & Impact -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Experience &amp; Impact
+            </span>
+<span class="font-metric-inline text-metric-inline text-on-surface">74%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-primary-container transition-all duration-700" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Metric 3: Formatting & Layout -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Formatting &amp; Layout
+            </span>
+<span class="font-metric-inline text-metric-inline text-on-surface">91%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-secondary transition-all duration-700" style="width: 91%;"></div>
+</div>
+</div>
+<!-- Metric 4: Keywords Matching -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+              Keywords Matching
+            </span>
+<span class="font-metric-inline text-metric-inline text-status-warning">68%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-status-warning transition-all duration-700" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Quick AI Takeaway Note -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">tips_and_updates</span>
+<p>Your technical stack density is strong. Adding missing infrastructure keywords like <strong class="text-on-surface">AWS ECS</strong> and <strong class="text-on-surface">CI/CD</strong> will propel your score past 88.</p>
+</div>
+</div>
+</div>
+<!-- Section: Extracted Skills vs Missing Keywords -->
+<div class="px-space-md mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">hub</span>
+          Semantic Keyword Intelligence
+        </h3>
+<span class="font-metric-inline text-label-sm text-text-muted">12 Detected</span>
+</div>
+<!-- Found Skills (Green) -->
+<div class="mt-space-md">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="w-2 h-2 rounded-full bg-status-success"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">
+            Verified In Resume (7)
+          </span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> React
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> TypeScript
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Node.js
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Git
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Tailwind CSS
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Jest
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-metric-inline text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> SQL
+          </span>
+</div>
+</div>
+<!-- Missing High-Priority Keywords (Amber) -->
+<div class="mt-space-lg">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-warning"></span>
+<span class="font-label-sm text-label-sm text-status-warning font-semibold uppercase tracking-wider">
+              Missing High-Priority (5)
+            </span>
+</div>
+<span class="font-label-sm text-[11px] text-text-muted">Tap to quick-insert</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="missing-chip inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-metric-inline text-label-sm hover:opacity-80 active:scale-95 transition-all" data-skill="Docker" type="button">
+<span class="material-symbols-outlined text-[13px]">add</span> Docker
+          </button>
+<button class="missing-chip inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-metric-inline text-label-sm hover:opacity-80 active:scale-95 transition-all" data-skill="Kubernetes" type="button">
+<span class="material-symbols-outlined text-[13px]">add</span> Kubernetes
+          </button>
+<button class="missing-chip inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-metric-inline text-label-sm hover:opacity-80 active:scale-95 transition-all" data-skill="CI/CD Pipeline" type="button">
+<span class="material-symbols-outlined text-[13px]">add</span> CI/CD Pipeline
+          </button>
+<button class="missing-chip inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-metric-inline text-label-sm hover:opacity-80 active:scale-95 transition-all" data-skill="AWS ECS" type="button">
+<span class="material-symbols-outlined text-[13px]">add</span> AWS ECS
+          </button>
+<button class="missing-chip inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-metric-inline text-label-sm hover:opacity-80 active:scale-95 transition-all" data-skill="Microservices" type="button">
+<span class="material-symbols-outlined text-[13px]">add</span> Microservices
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Section-by-Section Quality Audit -->
+<div class="px-space-md mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-sm text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">rule</span>
+          Section Quality Diagnostic
+        </h3>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">3 Audited</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Audit Item 1: Experience -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-status-warning">error_outline</span>
+              Experience Section
+            </span>
+<span class="font-label-sm text-[11px] text-status-warning font-semibold bg-surface-container px-2 py-0.5 rounded-full">
+              Attention Required
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-6">
+            Strong use of action verbs, but needs quantified impact metrics in roles 1 &amp; 2. Add revenue, latency, or throughput stats.
+          </p>
+</div>
+<!-- Audit Item 2: Formatting -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-status-success">check_circle</span>
+              Formatting &amp; Typography
+            </span>
+<span class="font-label-sm text-[11px] text-status-success font-semibold bg-surface-container px-2 py-0.5 rounded-full">
+              Optimal
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-6">
+            Clean single-column layout, standard fonts, high parser readability score. No problematic tabular or multi-column obstacles.
+          </p>
+</div>
+<!-- Audit Item 3: Education -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-status-success">school</span>
+              Education &amp; Credentials
+            </span>
+<span class="font-label-sm text-[11px] text-status-success font-semibold bg-surface-container px-2 py-0.5 rounded-full">
+              Optimal
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-6">
+            Relevant coursework and GPA formatted correctly. Accreditation recognized seamlessly by ATS entity lookup.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Live ATS Diff Preview Toggle -->
+<div class="px-space-md mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">compare_arrows</span>
+            Live Impact Diff Inspector
+          </h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Role: Lead Frontend Engineer (2022–2024)</p>
+</div>
+</div>
+<!-- Segmented View Controller -->
+<div class="flex bg-surface-container rounded-lg p-0.5 mb-space-md">
+<button class="flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-primary bg-primary-container shadow-sm font-semibold transition-all" id="view-diff-btn">
+          Diff Comparison
+        </button>
+<button class="flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="view-outcome-btn">
+          Measured Metrics (+28%)
+        </button>
+</div>
+<!-- Live Diff Box -->
+<div class="space-y-space-sm" id="diff-card-content">
+<!-- Original Bullet (Passive / Low Metric) -->
+<div class="p-space-sm rounded-lg bg-error-container/30">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-[11px] text-error font-semibold flex items-center gap-1 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[13px]">remove</span> Original Resume Bullet
+            </span>
+<span class="font-metric-inline text-[10px] text-text-muted">ATS Score: 52</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-through opacity-80">
+            “Worked on frontend components for the checkout app and refactored code to make it faster for web users.”
+          </p>
+</div>
+<!-- AI Optimized Bullet (Action + Metrics + Tools) -->
+<div class="p-space-sm rounded-lg bg-secondary-container/40">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-[11px] text-secondary font-semibold flex items-center gap-1 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[13px]">add</span> AI Recommended (Quantified)
+            </span>
+<span class="font-metric-inline text-[10px] text-status-success font-semibold">ATS Score: 94 (+42)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug font-medium">
+            “Architected 14 modular React &amp; TypeScript checkout components, reducing page load latency by 38% and driving a $1.2M annualized conversion lift across 450K monthly users.”
+          </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-1 text-[11px] font-metric-inline text-secondary">
+<span class="material-symbols-outlined text-[14px]">query_stats</span>
+<span>+38% Latency • $1.2M Lift</span>
+</div>
+<button class="font-label-sm text-label-sm text-on-primary bg-primary px-2.5 py-1 rounded hover:bg-primary-container active:scale-95 transition-all" id="apply-diff-btn">
+              Apply to Document
+            </button>
+</div>
+</div>
+</div>
+<!-- Hidden Outcome Alternate View Container (Toggled via JS) -->
+<div class="hidden p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-sm" id="outcome-card-content">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-status-success">
+<span class="material-symbols-outlined text-[24px]">trending_up</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Expected Recruiter Call Rate</h4>
+<p class="font-body-sm text-body-sm text-status-success font-medium">+28% interview conversion boost</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Recruiters spend an average of 6.2 seconds skimming. Bullet points containing front-loaded business outcomes with dollar or percentage deltas bypass initial recruiter filters with 3.4x higher probability.
+        </p>
+</div>
+</div>
+</div>
+<!-- Floating Helpful Context Action for Mobile Delight -->
+<div class="px-space-md mt-space-md">
+<div class="bg-gradient-to-r from-primary-container to-primary text-on-primary rounded-xl p-space-md shadow-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[28px] text-primary-fixed">psychology</span>
+<div>
+<p class="font-headline-sm text-label-md text-on-primary font-semibold">Mentor Prompt</p>
+<p class="font-body-sm text-label-sm text-primary-fixed leading-tight">Need a custom cover letter tailored to this score?</p>
+</div>
+</div>
+<button class="h-8 px-3 rounded-md bg-surface-container-lowest text-primary font-label-md text-label-sm font-semibold active:scale-95 transition-all shadow-sm" id="coach-tip-btn">
+        Generate
+      </button>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const toast = document.getElementById('action-toast');
+    const toastText = document.getElementById('toast-text');
+    let toastTimeout;
+
+    function showToast(message) {
+      if (!toast || !toastText) return;
+      toastText.textContent = message;
+      toast.classList.remove('-translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('-translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2600);
+    }
+
+    // Missing Keyword Quick Insert Action
+    document.querySelectorAll('.missing-chip').forEach(button => {
+      button.addEventListener('click', function () {
+        const skill = this.getAttribute('data-skill');
+        this.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        this.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
+        this.innerHTML = `<span class="material-symbols-outlined text-[13px]">check</span> ${skill}`;
+        showToast(`Skill '${skill}' queued for insertion in Experience summary.`);
+      });
+    });
+
+    // Toggle Diff vs Outcome View
+    const diffBtn = document.getElementById('view-diff-btn');
+    const outcomeBtn = document.getElementById('view-outcome-btn');
+    const diffContent = document.getElementById('diff-card-content');
+    const outcomeContent = document.getElementById('outcome-card-content');
+
+    if (diffBtn && outcomeBtn && diffContent && outcomeContent) {
+      diffBtn.addEventListener('click', () => {
+        diffBtn.className = "flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-primary bg-primary-container shadow-sm font-semibold transition-all";
+        outcomeBtn.className = "flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
+        diffContent.classList.remove('hidden');
+        outcomeContent.classList.add('hidden');
+      });
+
+      outcomeBtn.addEventListener('click', () => {
+        outcomeBtn.className = "flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-primary bg-primary-container shadow-sm font-semibold transition-all";
+        diffBtn.className = "flex-1 py-1.5 rounded-md font-label-md text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
+        outcomeContent.classList.remove('hidden');
+        diffContent.classList.add('hidden');
+      });
+    }
+
+    // Apply Diff action
+    const applyDiffBtn = document.getElementById('apply-diff-btn');
+    if (applyDiffBtn) {
+      applyDiffBtn.addEventListener('click', () => {
+        applyDiffBtn.textContent = 'Applied';
+        applyDiffBtn.classList.remove('bg-primary');
+        applyDiffBtn.classList.add('bg-status-success');
+        showToast('Bullet replaced in active draft. ATS Score recomputed (+3.2 pts).');
+      });
+    }
+
+    // Action button handlers
+    const analyzeBtn = document.getElementById('analyze-btn');
+    if (analyzeBtn) {
+      analyzeBtn.addEventListener('click', () => {
+        showToast('Running comprehensive ATS deep parser scan...');
+      });
+    }
+
+    const improveBtn = document.getElementById('improve-btn');
+    if (improveBtn) {
+      improveBtn.addEventListener('click', () => {
+        showToast('AI Career Mentor drafting bullet rewrites...');
+      });
+    }
+
+    const downloadReportBtn = document.getElementById('download-report-btn');
+    if (downloadReportBtn) {
+      downloadReportBtn.addEventListener('click', () => {
+        showToast('Generating official 6-page ATS Diagnostic PDF...');
+      });
+    }
+
+    const reuploadBtn = document.getElementById('reupload-btn');
+    if (reuploadBtn) {
+      reuploadBtn.addEventListener('click', () => {
+        showToast('File picker ready: Select PDF or DOCX (max 10MB)');
+      });
+    }
+
+    const coachTipBtn = document.getElementById('coach-tip-btn');
+    if (coachTipBtn) {
+      coachTipBtn.addEventListener('click', () => {
+        showToast('Targeting cover letter with Senior Full-Stack parameters...');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-sidebar/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(23,33,43,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex items-center justify-around h-16 px-1"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="dashboard-overview" href="#"><span class="material-symbols-outlined text-[22px]">space_dashboard</span><span class="font-label-sm text-[10px] tracking-tight leading-tight mt-0.5">Overview</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="career-assessment" href="#"><span class="material-symbols-outlined text-[22px]">psychology_alt</span><span class="font-label-sm text-[10px] tracking-tight leading-tight mt-0.5">Assess</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="career-recommendations" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="font-label-sm text-[10px] tracking-tight leading-tight mt-0.5">Advise</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary-container font-semibold" data-path="resume-analyzer" href="#"><span class="material-symbols-outlined text-[22px]">document_scanner</span><span class="font-label-sm text-[10px] tracking-tight leading-tight mt-0.5">Resume</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="learning-roadmap" href="#"><span class="material-symbols-outlined text-[22px]">moving</span><span class="font-label-sm text-[10px] tracking-tight leading-tight mt-0.5">Roadmap</span></a></div></nav><script>(function(){const toggle=document.getElementById('menu-drawer-toggle');const close=document.getElementById('menu-drawer-close');const backdrop=document.getElementById('drawer-backdrop');const drawer=document.getElementById('app-drawer');function openMenu(){if(drawer&&backdrop){drawer.classList.remove('-translate-x-full');backdrop.classList.remove('opacity-0','pointer-events-none');}}function closeMenu(){if(drawer&&backdrop){drawer.classList.add('-translate-x-full');backdrop.classList.add('opacity-0','pointer-events-none');}}if(toggle)toggle.addEventListener('click',openMenu);if(close)close.addEventListener('click',closeMenu);if(backdrop)backdrop.addEventListener('click',closeMenu);})();</script></body></html>
