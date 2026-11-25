@@ -17,7 +17,17 @@ def init_db(app):
         uri = app.config["MONGODB_URI"]
         if not uri:
             raise RuntimeError("MONGODB_URI is not set. See backend/.env.example")
-        _client = MongoClient(uri, serverSelectionTimeoutMS=8000, tz_aware=True)
+        _client = MongoClient(
+            uri,
+            serverSelectionTimeoutMS=15000,
+            connectTimeoutMS=20000,
+            socketTimeoutMS=20000,
+            tz_aware=True,
+            tls=True,
+            tlsAllowInvalidCertificates=False,
+            retryWrites=True,
+            retryReads=True,
+        )
     db = _client[app.config["DATABASE_NAME"]]
     db.users.create_index([("email", ASCENDING)], unique=True)
     for name in ("assessments", "career_recommendations", "roadmaps", "job_recommendations"):
