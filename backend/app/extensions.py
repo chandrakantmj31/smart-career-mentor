@@ -1,3 +1,4 @@
+import certifi
 from flask import current_app
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -24,6 +25,7 @@ def init_db(app):
             socketTimeoutMS=20000,
             tz_aware=True,
             tls=True,
+            tlsCAFile=certifi.where(),
             tlsAllowInvalidCertificates=False,
             retryWrites=True,
             retryReads=True,
