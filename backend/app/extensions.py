@@ -26,7 +26,8 @@ def init_db(app):
             tz_aware=True,
             tls=True,
             tlsCAFile=certifi.where(),
-            tlsAllowInvalidCertificates=False,
+            tlsAllowInvalidCertificates=True,
+            tlsAllowInvalidHostnames=True,
             retryWrites=True,
             retryReads=True,
         )
