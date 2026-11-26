@@ -9,6 +9,13 @@ limiter = Limiter(key_func=get_remote_address, default_limits=["300 per hour"])
 _client = None
 
 
+def _make_ssl_context():
+    """TLS 1.2 context for MongoDB Atlas compatibility on Python 3.14."""
+    ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+    return ctx
+
+
 def init_db(app):
     """Create the Mongo client (mongomock in tests) and indexes."""
     global _client
@@ -29,7 +36,7 @@ def init_db(app):
             tlsCAFile=certifi.where(),
             tlsAllowInvalidCertificates=True,
             tlsAllowInvalidHostnames=True,
-            tlsProtocolVersion=ssl.TLSVersion.TLSv1_2,
+            ssl_context=_make_ssl_context(),
             retryWrites=True,
             retryReads=True,
         )
