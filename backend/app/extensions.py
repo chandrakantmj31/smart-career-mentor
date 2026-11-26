@@ -1,5 +1,3 @@
-import certifi
-import ssl
 from flask import current_app
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -7,13 +5,6 @@ from pymongo import MongoClient, ASCENDING
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["300 per hour"])
 _client = None
-
-
-def _make_ssl_context():
-    """TLS 1.2 context for MongoDB Atlas compatibility on Python 3.14."""
-    ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
-    return ctx
 
 
 def init_db(app):
@@ -32,11 +23,6 @@ def init_db(app):
             connectTimeoutMS=20000,
             socketTimeoutMS=20000,
             tz_aware=True,
-            tls=True,
-            tlsCAFile=certifi.where(),
-            tlsAllowInvalidCertificates=True,
-            tlsAllowInvalidHostnames=True,
-            ssl_context=_make_ssl_context(),
             retryWrites=True,
             retryReads=True,
         )
