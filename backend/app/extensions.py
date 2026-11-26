@@ -1,4 +1,5 @@
 import certifi
+import ssl
 from flask import current_app
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -28,6 +29,7 @@ def init_db(app):
             tlsCAFile=certifi.where(),
             tlsAllowInvalidCertificates=True,
             tlsAllowInvalidHostnames=True,
+            tlsProtocolVersion=ssl.TLSVersion.TLSv1_2,
             retryWrites=True,
             retryReads=True,
         )
