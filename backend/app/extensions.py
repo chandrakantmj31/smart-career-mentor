@@ -23,6 +23,9 @@ def init_db(app):
             connectTimeoutMS=20000,
             socketTimeoutMS=20000,
             tz_aware=True,
+            tls=True,
+            tlsAllowInvalidCertificates=True,
+            tlsAllowInvalidHostnames=True,
             retryWrites=True,
             retryReads=True,
         )
